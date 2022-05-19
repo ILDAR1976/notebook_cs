@@ -1,0 +1,32 @@
+<div class="container mt-5" style="width: 600px;">
+  <div id="formContent" style="background-color: #272727; opacity: 80%;" class="p-3 text-white">
+
+    <h2 class="active text-white">Форма регистрации</h2>
+    <h5 class="mb-4">Введите данные для регистрации</h5>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" method="post"  >
+      <div class="mb-3">
+        <label class="form-label" for="имя">Имя пользователя</label>
+        <input type="text" id="mainname" class="form-control" name="register" placeholder="Иия пользователя"
+          formControlName="mainname">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="имя">Электронный адрес</label>
+        <input type="text" id="username" class="form-control" name="register" placeholder="Электронный адрес"
+          formControlName="username">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="password">Пароль</label>
+        <input type="password" id="password" class="form-control" name="register" placeholder="пароль"
+          formControlName="password">
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="password">Повторить пароль</label>
+        <input type="password" id="repeat-password" class="form-control" name="register" placeholder="пароль еще раз" >
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Войти</button>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Record {\n  constructor(id = null, dateTime, description = null) {\n    this.id = null;\n    this.description = null;\n    this.id = id;\n    this.dateTime = dateTime;\n    this.description = description;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
