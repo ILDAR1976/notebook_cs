@@ -25,8 +25,8 @@ import {
   providedIn: 'root'
 })
 export class AuthService  {
-  private url = "http://localhost:8080/base/rest/admin/users";
-  private sourceUrl = "http://localhost:8080/base";
+  private url = "https://localhost:7048/base/rest/admin/users";
+  private sourceUrl = "https://localhost:7048/base";
 
   constructor(
     private httpClient: HttpClient
@@ -46,9 +46,9 @@ export class AuthService  {
   private setToken(response: any | null) {
     if (response) {
       const res = JSON.parse(response);
-      console.log("Result: " + res.token);
-      localStorage.setItem('accessToken', res.token);
-      console.log("In storage: " + localStorage.getItem('accessToken'));
+
+      localStorage.setItem('accessToken', res.access_token);
+
     } else {
       localStorage.clear();
     }

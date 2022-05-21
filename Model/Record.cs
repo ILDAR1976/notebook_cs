@@ -22,5 +22,16 @@ public partial class Record : AbstractBaseEntity
  
     public Record(): base(null) {
     }
-    public Record(int? id): base(id) {} 
+    
+    public Record(int? id, string description, DateTime dateTime) {
+       this.id = id;
+       this.description = description;
+       this.dateTime = dateTime; 
+    }
+    public Record(int? id, string description, DateTime dateTime, int userId) {
+       this.id = id;
+       this.description = description;
+       this.dateTime = dateTime; 
+       this.userId = userId;
+    }
 }

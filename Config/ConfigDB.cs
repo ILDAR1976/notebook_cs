@@ -1,8 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Metadata;
 using notebook.Model;
 
 
@@ -23,22 +21,11 @@ namespace notebook.Config
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserRole> UserRoles { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured) {
-
-                optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=notebook;Username=postgres;Password=admin");
-            }
-        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var valueComparer = new ValueComparer<ICollection<UserRole>>(
-                    (c1, c2) => c1.SequenceEqual(c2),
-                    c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
-                    c => (ICollection<UserRole>)c.ToHashSet());
-
-
+           
             modelBuilder.Entity<Record>(entity =>
             {
                 entity.ToTable("records");

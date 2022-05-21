@@ -5,7 +5,7 @@ import {Record} from '../model/record';
 @Injectable()
 export class RecordService{
 
-    private url = "http://localhost:8080/base/rest/profile/records";
+    private url = "https://localhost:7048/base/rest/profile/records";
     constructor(private http: HttpClient){ }
 
     getRecord(){

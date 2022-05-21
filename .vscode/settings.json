@@ -4,9 +4,12 @@
         "aspnet",
         "aspnetcore",
         "devkit",
+        "Hmac",
         "Hsts",
         "jasminewd",
+        "Npgsql",
         "oidc",
-        "prestart"
+        "prestart",
+        "Secutiry"
     ]
 }

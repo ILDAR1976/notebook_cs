@@ -19,5 +19,9 @@ namespace notebook.Model {
         public Role role {get; set;}
 
         public User user {get; set;}
+
+        public override String ToString() {
+            return role.ToString();
+        }
     } 
 }

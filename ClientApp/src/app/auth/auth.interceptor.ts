@@ -36,8 +36,9 @@ export class AuthInterceptor implements HttpInterceptor {
     if (this.authService.isAuth()) {
       request = request.clone({
         setHeaders: {
-          //Authorization: `Bearer ${this.authService.token}`
-          Authorization: `${this.authService.token}`
+          Accept: "application/json",
+          Authorization: `Bearer ${this.authService.token}`
+          //Authorization: `${this.authService.token}`
         }
       })
     }

@@ -29,9 +29,9 @@ public partial class User : AbstractNamedEntity
 
     public User(int? id, String? name):base(id, name) {}
 
-    //public User(User u) : this(u.id, u.name, u.email, u.password, u.enabled, u.registered, u.roles) {}
+    public User(User u) : this(u.id, u.name, u.email, u.password, u.enabled, u.registered, u.roles) {}
  
-    public User(int? id, String name, String email, String password, Role role, ICollection<UserRole> roles) :
+    public User(int? id, String name, String email, String password, ICollection<UserRole> roles) :
         this(id, name, email, password, true, DateTime.Now, roles) {}
  
     public User(int? id, String? name, String? email, String? password, bool? enabled, DateTime? registered, ICollection<UserRole> roles) 
@@ -42,6 +42,7 @@ public partial class User : AbstractNamedEntity
         this.password = password;
         this.enabled = enabled;
         this.registered = registered;
+        this.roles = roles;
     }
 
 }

@@ -6,7 +6,7 @@ import {environment} from 'src/environments/environment';
 @Injectable()
 export class UserService{
 
-    private url = "http://localhost:8080/base/rest/admin/users";
+    private url = "https://localhost:7048/base/rest/admin/users";
     constructor(private http: HttpClient){ }
 
     getUsers(){

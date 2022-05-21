@@ -145,12 +145,12 @@ export class RecordComponent implements OnInit {
   }
 
   currentDatetimeToString(inputDatetime : Date) : string {
-    //this.datepipe.transform(inputDatetime, 'dd.MM.yyyy hh:mm')
-   /*  let date = new Date(inputDatetime);
+    //this.datepipe.transform(inputDatetime, 'dd.MM.yyyy HH:mm:ss')
+    let date = new Date(inputDatetime);
     return ((date.getDay() < 10 ? '0' + date.getDay() : date.getDay()) + '.' +
             ((date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)) +  '.' +
-            date.getFullYear() + ' ' + date.toLocaleTimeString('ru-RU')); */
-    return "Дата";
+            date.getFullYear() + ' ' + date.toLocaleTimeString('ru-RU'));
+
   }
 }
 
